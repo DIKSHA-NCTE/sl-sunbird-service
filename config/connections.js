@@ -29,12 +29,12 @@ const mongodb_connect = function (configuration) {
   * @param {Object} configuration  - configuration data for cassandra.
 */
 
-let cassandra_connect = function (configuration) {
-  global.cassandraDatabase = require("./db/cassandra")(configuration);
-  if( !global.Abstract ){
-    global.Abstract = require(process.env.PATH_TO_ABSTRACT_FILE);
-  }
-};
+// let cassandra_connect = function (configuration) {
+//   global.cassandraDatabase = require("./db/cassandra")(configuration);
+//   if( !global.Abstract ){
+//     global.Abstract = require(process.env.PATH_TO_ABSTRACT_FILE);
+//   }
+// };
 
 /**
   * Elastic search configuration.
@@ -68,7 +68,7 @@ const configuration = {
 };
 
 mongodb_connect(configuration.mongodb);
-cassandra_connect(configuration.cassandra);
+// cassandra_connect(configuration.cassandra);
 elasticsearch_connect(configuration.elasticSearch);
 
 module.exports = configuration;
